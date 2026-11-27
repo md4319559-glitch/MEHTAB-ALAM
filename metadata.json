@@ -1,0 +1,6 @@
+{
+  "name": "WonderPlay",
+  "description": "A playful, colorful kids learning and adventure game suite featuring Balloon Pop, Animal Memory Match, Math Safari, Rainbow Xylophone, and a cloud-synced Sticker Album.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,122 @@
+{
+  "entities": {
+    "PlayerProfile": {
+      "title": "PlayerProfile",
+      "description": "Child player profile storing cloud-synced stars, game counts, best scores, and unlocked animal stickers.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Authenticated Firebase UID owning this player profile."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Player display name."
+        },
+        "totalStars": {
+          "type": "integer",
+          "description": "Available stars earned across mini-games."
+        },
+        "gamesPlayed": {
+          "type": "integer",
+          "description": "Total completed mini-game rounds."
+        },
+        "balloonBestScore": {
+          "type": "integer",
+          "description": "Best score in Balloon Pop."
+        },
+        "memoryBestScore": {
+          "type": "integer",
+          "description": "Best score in Animal Memory Match."
+        },
+        "mathBestScore": {
+          "type": "integer",
+          "description": "Best score in Math Safari."
+        },
+        "xylophoneBestScore": {
+          "type": "integer",
+          "description": "Best score in Rainbow Xylophone."
+        },
+        "unlockedStickers": {
+          "type": "array",
+          "description": "Bounded list of unlocked sticker IDs (max 20)."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the profile was created (FieldValue.serverTimestamp())."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the profile was last updated (FieldValue.serverTimestamp())."
+        }
+      },
+      "required": [
+        "userId",
+        "displayName",
+        "totalStars",
+        "gamesPlayed",
+        "balloonBestScore",
+        "memoryBestScore",
+        "mathBestScore",
+        "xylophoneBestScore",
+        "unlockedStickers",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "GameSession": {
+      "title": "GameSession",
+      "description": "Immutable record of a completed mini-game round and stars earned.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Authenticated Firebase UID."
+        },
+        "gameType": {
+          "type": "string",
+          "enum": ["balloon_pop", "memory_match", "math_safari", "xylophone"],
+          "description": "Mini-game identifier."
+        },
+        "score": {
+          "type": "integer",
+          "description": "Score achieved in the round."
+        },
+        "starsEarned": {
+          "type": "integer",
+          "description": "Stars awarded (0-3)."
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["easy", "medium"],
+          "description": "Selected difficulty mode."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of game completion (FieldValue.serverTimestamp())."
+        }
+      },
+      "required": [
+        "userId",
+        "gameType",
+        "score",
+        "starsEarned",
+        "difficulty",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/PlayerProfile" },
+      "description": "Stores each signed-in player's stars, best scores, and unlocked stickers."
+    },
+    "/users/{userId}/gameSessions/{sessionId}": {
+      "schema": { "$ref": "#/entities/GameSession" },
+      "description": "Immutable log of completed mini-game rounds for a player."
+    }
+  }
+}

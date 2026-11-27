@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">WonderPlay</string>
+    <string name="welcome_title">Welcome to WonderPlay!</string>
+    <string name="welcome_subtitle">Play joyful games, pop balloons, match cute animals, and collect golden stars across all your devices.</string>
+    <string name="sign_in_google">Sign in with Google</string>
+    <string name="signing_in">Signing in…</string>
+    <string name="sign_out">Sign out</string>
+    <string name="home_greeting">Hi, %1$s!</string>
+    <string name="home_banner_title">Sunny Playtime</string>
+    <string name="home_banner_subtitle">Pick a game below to earn stars!</string>
+    <string name="play_surprise">Surprise Me!</string>
+    <string name="sticker_album">Stickers</string>
+    <string name="settings_title">Parent &amp; Game Settings</string>
+    <string name="sound_effects_label">Playful Sound Effects</string>
+    <string name="difficulty_label">Game Difficulty</string>
+    <string name="difficulty_easy">Easy (Ages 3–5)</string>
+    <string name="difficulty_medium">Explorer (Ages 6+)</string>
+    <string name="game_balloon_title">Balloon Pop</string>
+    <string name="game_balloon_desc">Pop matching colors &amp; numbers!</string>
+    <string name="game_memory_title">Animal Match</string>
+    <string name="game_memory_desc">Flip cards to find animal pairs!</string>
+    <string name="game_math_title">Math Safari</string>
+    <string name="game_math_desc">Count fruits &amp; solve sunny puzzles!</string>
+    <string name="game_xylophone_title">Music Rainbow</string>
+    <string name="game_xylophone_desc">Tap keys or echo the melody!</string>
+    <string name="best_score_format">Best: %1$d</string>
+    <string name="stars_count_format">%1$d Stars</string>
+    <string name="play_again">Play Again</string>
+    <string name="back_home">Back Home</string>
+    <string name="great_job">Yay! Awesome Job!</string>
+    <string name="retry">Try Again</string>
+    <string name="close">Close</string>
+</resources>
